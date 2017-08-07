@@ -18,6 +18,8 @@
         created_at: Criado em
         updated_at: Atualizado em
         email: E-mail
+        name: Nome
+        name_school: Nome da Escola
         password: Senha
         password_confirmation: Confirmação de senha
       admin:

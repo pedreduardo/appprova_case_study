@@ -1,0 +1,48 @@
+<h1 class="page-header"><%= @members.model_name.human(count: 2) %></h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= t('messages.listing', model: @members.model_name.human(count: 2)) %>
+    <%= link_to new_backoffice_member_path, class: "btn btn-success btn-circle pull-right",
+            style: "margin-top: -5px;" do  %>
+    <%= fa_icon("plus") %>
+    <% end %>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><%= @members.model.human_attribute_name('name') %></th>
+            <th><%= @members.model.human_attribute_name('email') %></th>
+            <th><%= @members.model.human_attribute_name('name_school') %></th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @members.each do |member| %>
+          <tr>
+            <td><%= member.id %></td>
+            <td><%= member.name %></td>
+            <td><%= member.email %></td>
+            <td><%= member.name_school %></td>
+            <td style="width: 150px; ">
+              <%= link_to edit_backoffice_member_path(member), class: "btn btn-primary btn-circle" do %>
+              <%= fa_icon("edit") %>
+              <% end %>
+              <%= link_to backoffice_member_path(member), method: :delete,
+                                class: "btn btn-danger btn-circle",
+                                data: {confirm: t('messages.confirm_with', item: member.name )} do %>
+              <%= fa_icon("minus") %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+  <!-- /.panel-body -->
+</div>

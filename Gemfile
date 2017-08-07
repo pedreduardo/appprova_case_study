@@ -18,6 +18,8 @@ gem 'enum_help'
 gem 'jquery-rails'
 # Repository for collecting Locale data for Ruby on Rails I18n
 gem 'rails-i18n'
+# Minimal authorization through OO design and pure Ruby classes
+gem "pundit"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -62,6 +64,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Better error page for Rack apps
   gem 'better_errors'
+  gem 'binding_of_caller'
   # Rails >= 3 pry initializer
   gem 'pry-rails'
   # A library for generating fake data such as names, addresses, and phone numbers.

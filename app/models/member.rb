@@ -1,6 +1,12 @@
 class Member < ApplicationRecord
+  validates_presence_of :first_name, :last_name, :name_school, :cnpj_school, :cell_phone
+  has_many :students
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

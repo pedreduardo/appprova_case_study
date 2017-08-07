@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'backoffice', to: 'backoffice/dashboard#index'
   namespace :backoffice do
-    get 'dashboard/index'
+    resources :admins, except: [:show]
+    resources :members, except: [:show]
+    get 'dashboard', to: 'dashboard#index'
   end
 
   devise_for :admins, skip: [:registrations]
