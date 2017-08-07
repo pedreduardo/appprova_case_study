@@ -1,0 +1,6 @@
+'pt-BR':
+  app:
+    name: AppProva
+    site_subtitle: Site - AppProva
+    backoffice_subtitle: Backoffice - AppProva
+    profile_subtitle: Perfil - AppProva

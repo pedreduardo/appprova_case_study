@@ -14,6 +14,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 # i18n for enum
 gem 'enum_help'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 # Repository for collecting Locale data for Ruby on Rails I18n
 gem 'rails-i18n'
 # Use SCSS for stylesheets
