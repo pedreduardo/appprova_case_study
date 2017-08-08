@@ -54,6 +54,10 @@ gem 'bootstrap_sb_admin_base_v2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# For Excel imports
+gem "roo", '~> 2.7.0'
+gem 'roo-xls'
+
 group :development, :test do
   # Catches mail and serves it through a dream.
   gem 'mailcatcher'
@@ -65,7 +69,8 @@ group :development, :test do
   # Better error page for Rack apps
   gem 'better_errors'
   gem 'binding_of_caller'
-  # Rails >= 3 pry initializer
+  gem 'pry'
+  gem 'pry-nav'
   gem 'pry-rails'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'

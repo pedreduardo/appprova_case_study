@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :admins, except: [:show]
     resources :members, except: [:show]
+    resources :students, except: [:show] do
+      collection do
+        post :import
+      end
+    end
     get 'dashboard', to: 'dashboard#index'
   end
 

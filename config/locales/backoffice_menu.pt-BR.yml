@@ -2,3 +2,5 @@
   backoffice_menu:
     dashboard: Dashboard
     admins: Administradores
+    members: Escolas
+    students: Estudantes
