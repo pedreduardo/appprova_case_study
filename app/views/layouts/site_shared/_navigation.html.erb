@@ -21,10 +21,10 @@
                 </li>
                 <% else %>
                 <li>
-                    <%= link_to current_member.email, "#" %>
+                    <%= link_to current_member.first_name, "#" %>
                 </li>
                 <li>
-                    <%= link_to "Perfil", backoffice_admins_path %>
+                    <%= link_to "Dashboard", site_profile_dashboard_index_path %>
                 </li>
                 <li>
                     <button class="btn btn-app btn-lg"><%= link_to "Sair", destroy_member_session_path,  method: :delete %></button>

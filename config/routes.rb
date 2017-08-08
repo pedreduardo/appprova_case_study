@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   namespace :site do
     get 'home/index'
+
+    namespace :profile do
+      resources :dashboard, only: [:index]
+    end
   end
 
   get 'backoffice', to: 'backoffice/dashboard#index'
