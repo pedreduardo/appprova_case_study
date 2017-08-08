@@ -55,6 +55,14 @@
           <%= fa_icon('users fw') %>
           <%= t('backoffice_menu.admins') %>
           <% end %>
+          <%= link_to backoffice_members_path do %>
+          <%= fa_icon('book fw') %>
+          <%= t('backoffice_menu.members') %>
+          <% end %>
+          <%= link_to backoffice_students_path do %>
+          <%= fa_icon('check-circle fw') %>
+          <%= t('backoffice_menu.students') %>
+          <% end %>
         </li>
       </ul>
     </div>

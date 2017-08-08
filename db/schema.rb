@@ -49,19 +49,9 @@ ActiveRecord::Schema.define(version: 20170808040919) do
     t.string "cell_phone", limit: 60
     t.string "name_school", limit: 100
     t.string "cnpj_school", limit: 60
-    t.string "classification", limit: 10
-    t.string "enem_number", limit: 60
-    t.string "grade", limit: 60
-    t.string "obs"
-    t.string "course", limit: 100
-    t.string "campus", limit: 300
-    t.string "university", limit: 300
     t.index ["cnpj_school"], name: "index_members_on_cnpj_school", unique: true
-    t.index ["course"], name: "index_members_on_course"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
-    t.index ["university"], name: "index_members_on_university"
-    t.index [nil], name: "index_members_on_name"
   end
 
   create_table "students", force: :cascade do |t|
@@ -69,7 +59,17 @@ ActiveRecord::Schema.define(version: 20170808040919) do
     t.integer "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "classification", limit: 10
+    t.string "enem_number", limit: 60
+    t.string "grade", limit: 60
+    t.string "obs"
+    t.string "course", limit: 100
+    t.string "campus", limit: 300
+    t.string "university", limit: 300
+    t.index ["course"], name: "index_students_on_course"
     t.index ["member_id"], name: "index_students_on_member_id"
+    t.index ["name"], name: "index_students_on_name"
+    t.index ["university"], name: "index_students_on_university"
   end
 
 end

@@ -12,6 +12,9 @@
       admin:
         one: Administrador
         other: Administradores
+      student:
+        one: Estudante
+        other: Estudantes
     attributes:
       member:
         id: Código

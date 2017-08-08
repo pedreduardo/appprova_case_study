@@ -4,6 +4,7 @@
     confirm_with: Você deseja realmente excluir (<b>%{item}</b>)?
     listing: Listando %{model}
     editing: Editando %{model}
+    importing: Importando %{model}
     new: Novo %{model}
     errors: ocorreram...
     created: Item criado com sucesso!
@@ -15,3 +16,5 @@
     not_authorized: Você não está autorizado a executar essa ação.
     email_delivered: Email enviado com sucesso!
     email_not_delivered: Erro ao enviar email. Tente novamente
+    import_error: Ocorreu um erro ao importar dados. Verifique a extensão do arquivo e se os dados estão corretos.
+    import_success: Dados importados com sucesso.
