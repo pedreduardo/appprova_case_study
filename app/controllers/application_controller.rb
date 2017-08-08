@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if devise_controller? && resource_name == :admin
       'backoffice_devise'
     elsif devise_controller? && resource_name == :member
-      'site_devise'
+      'member_devise'
     else
       'application'
     end
