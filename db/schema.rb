@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807021011) do
+ActiveRecord::Schema.define(version: 20170808040919) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,9 +49,19 @@ ActiveRecord::Schema.define(version: 20170807021011) do
     t.string "cell_phone", limit: 60
     t.string "name_school", limit: 100
     t.string "cnpj_school", limit: 60
+    t.string "classification", limit: 10
+    t.string "enem_number", limit: 60
+    t.string "grade", limit: 60
+    t.string "obs"
+    t.string "course", limit: 100
+    t.string "campus", limit: 300
+    t.string "university", limit: 300
     t.index ["cnpj_school"], name: "index_members_on_cnpj_school", unique: true
+    t.index ["course"], name: "index_members_on_course"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+    t.index ["university"], name: "index_members_on_university"
+    t.index [nil], name: "index_members_on_name"
   end
 
   create_table "students", force: :cascade do |t|
