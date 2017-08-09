@@ -33,12 +33,18 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
+            <ul class="nav" id="side-menu">
                 <li class="sidebar-brand">
-                    <%= link_to "Dashboard", site_profile_dashboard_index_path %>
+                    <%= link_to site_profile_dashboard_index_path do %>
+                    <%= fa_icon('dashboard fw') %>
+                    <%= t('backoffice_menu.dashboard') %>
+                    <% end %>
                 </li>
                 <li class="sidebar-brand">
-                    <%= link_to "Dashboard", site_profile_dashboard_index_path %>
+                    <%= link_to site_profile_students_path do %>
+                    <%= fa_icon('book fw') %>
+                    <%= t('backoffice_menu.students') %>
+                    <% end %>
                 </li>
             </ul>
         </div>
