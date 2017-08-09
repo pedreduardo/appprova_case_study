@@ -6,7 +6,7 @@ class Backoffice::StudentsController < BackofficeController
   end
 
   def import
-    if StudentService.import(params[:file])
+    if StudentService.import_excel(params[:file])
       redirect_to backoffice_students_path, notice: I18n.t('messages.import_success')
     end
   rescue
