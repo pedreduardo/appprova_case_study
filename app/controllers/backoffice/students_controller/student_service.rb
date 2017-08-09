@@ -12,6 +12,7 @@ class StudentService
       end
     end
 
+  protected
     def create_student(hash)
       Student.create!(
         university: hash[:university],
