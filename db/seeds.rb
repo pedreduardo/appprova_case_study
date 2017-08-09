@@ -25,7 +25,7 @@ Member.create!(
   first_name: 'Renan',
   last_name: 'Garcia',
   cell_phone: '(31) 98500-0875',
-  name_school: 'Escola do Renan',
+  name_school: 'Approvado - Sem escola',
   cnpj_school: '82.292.155/0001-03',
   email: 'member@member',
   password: '123456',
