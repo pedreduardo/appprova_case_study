@@ -71,7 +71,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background-image: url(/assets/bg_index.jpg);
+  background-image: image-url("bg_index.jpg");
   background-size: cover;
   background-position: center;
   color: white;
