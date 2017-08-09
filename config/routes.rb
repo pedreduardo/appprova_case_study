@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
     namespace :profile do
       resources :dashboard, only: [:index]
+      resources :students, only: [:index]
     end
   end
 

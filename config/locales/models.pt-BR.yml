@@ -34,3 +34,7 @@
         password_confirmation: Confirmação de senha
         name: Nome
         role: Tipo de Acesso
+      student:
+        id: Código
+        name: Nome
+      
