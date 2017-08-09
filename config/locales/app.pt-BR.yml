@@ -4,3 +4,11 @@
     site_subtitle: Site - AppProva
     backoffice_subtitle: Backoffice - AppProva
     profile_subtitle: Perfil - AppProva
+  views:
+    pagination:
+      first: "&laquo; Primeiro"
+      last: "Último &raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+  
