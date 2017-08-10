@@ -6,7 +6,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            <%= image_tag("logo.png", :class => 'logo-nav') %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -14,17 +14,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <% unless member_signed_in? %>
                 <li>
-                    <%= link_to "Login", new_member_session_path %>
+                    <%= link_to "Login", new_member_session_path, class: 'nav-login' %>
                 </li>
                 <li>
                     <button class="btn btn-app btn-lg"><%= link_to "Cadastrar-se", new_member_registration_path %></button>
                 </li>
                 <% else %>
                 <li>
-                    <%= link_to current_member.first_name, "#" %>
+                    <%= link_to current_member.email, "#", class: 'nav-login' %>
                 </li>
                 <li>
-                    <%= link_to "Dashboard", site_profile_dashboard_index_path %>
+                    <%= link_to "Painel", site_profile_dashboard_index_path, class: 'nav-login' %>
                 </li>
                 <li>
                     <button class="btn btn-app btn-lg"><%= link_to "Sair", destroy_member_session_path,  method: :delete %></button>
