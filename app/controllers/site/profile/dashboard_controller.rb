@@ -1,5 +1,5 @@
 class Site::Profile::DashboardController < Site::ProfileController
   def index
-    @students = Student.my_alumni(current_member.id).page(params[:page])
+    @students = current_member.students.order(:name).page(params[:page])
   end
 end
