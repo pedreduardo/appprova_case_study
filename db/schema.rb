@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808040919) do
+ActiveRecord::Schema.define(version: 20170810050945) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170808040919) do
     t.string "course", limit: 100
     t.string "campus", limit: 300
     t.string "university", limit: 300
+    t.boolean "public_university"
     t.index ["course"], name: "index_students_on_course"
     t.index ["member_id"], name: "index_students_on_member_id"
     t.index ["name"], name: "index_students_on_name"
