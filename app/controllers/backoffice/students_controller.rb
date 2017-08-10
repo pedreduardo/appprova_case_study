@@ -9,8 +9,8 @@ class Backoffice::StudentsController < BackofficeController
     if StudentService.import_excel(params[:file])
       redirect_to backoffice_students_path, notice: I18n.t('messages.import_success')
     end
-  rescue
-    redirect_to backoffice_students_path, alert: I18n.t('messages.import_error')
+    rescue
+      redirect_to backoffice_students_path, alert: I18n.t('messages.import_error')
   end
 
   private
