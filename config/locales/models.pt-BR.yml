@@ -37,4 +37,6 @@
       student:
         id: Código
         name: Nome
+        university: Universidade
+        course: Curso
       

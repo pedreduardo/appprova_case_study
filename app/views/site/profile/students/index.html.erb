@@ -1,6 +1,8 @@
+<div id="flash"></div>
 <h1 class="page-header"><%= @students.model_name.human(count: 2) %></h1>
 <div class="panel panel-default">
     <div class="panel-heading">
+
         <%= t('messages.listing', model: @students.model_name.human(count: 2)) %>
     </div>
 
@@ -18,12 +20,21 @@
               <thead>
                   <tr>
                       <th><%= @students.model.human_attribute_name('name') %></th>
+                      <th><%= @students.model.human_attribute_name('university') %></th>
+                      <th><%= @students.model.human_attribute_name('curso') %></th>
                   </tr>
               </thead>
               <tbody>
                   <% @students.each do |student| %>
-                    <tr>
+                    <tr id="item-<%= student.id %>">
                         <td><%= student.name %></td>
+                        <td><%= student.university %></td>
+                        <td><%= student.course %></td>
+                        <td style="width: 150px; ">
+                            <%= link_to site_profile_students_add_to_member_path(student), class: "btn btn-success btn-circle submit_student", :method => :post, remote: true do %>
+                              <%= fa_icon("plus") %> <%=t('labels.my_alumni')%>
+                            <% end %>
+                        </td>
                     </tr>
                   <% end %>
               </tbody>
