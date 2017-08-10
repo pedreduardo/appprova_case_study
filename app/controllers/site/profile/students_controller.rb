@@ -1,7 +1,7 @@
 class Site::Profile::StudentsController < Site::ProfileController
   
   def index
-    @students = Student.filter(params[:search]).page(params[:page])
+    @students = Student.filter(params[:search]).not_mine(current_member).page(params[:page])
   end
 
   def add_to_member
