@@ -3,4 +3,5 @@
     dashboard: Dashboard
     admins: Administradores
     members: Escolas
-    students: Estudantes
+    students: Aprovados
+    my_alumni: Meus Alunos

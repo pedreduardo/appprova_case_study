@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :students, only: [:index]
+      post 'students/add_to_member', to: 'students#add_to_member'
     end
   end
 

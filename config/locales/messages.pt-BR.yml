@@ -3,6 +3,7 @@
     confirm: Tem certeza?
     confirm_with: Você deseja realmente excluir (<b>%{item}</b>)?
     listing: Listando %{model}
+    listing_my_alumnis: Listando meus %{model}
     editing: Editando %{model}
     importing: Importando %{model}
     new: Novo %{model}
