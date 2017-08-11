@@ -1,5 +1,6 @@
 class Site::Profile::DashboardController < Site::ProfileController
+  
   def index
-    @students = current_member.students.order(:name).page(params[:page])
+    @students = Student.filter(params[:search]).mine(current_member).page(params[:page])
   end
 end

@@ -1,12 +1,11 @@
-<div id="flash"></div>
-<h1 class="page-header"><%= @students.model_name.human(count: 2) %></h1>
+<h1 class="page-header"><%= t('labels.my_alumnis') %></h1>
 <div class="panel panel-default">
     <div class="panel-heading">
 
-        <%= t('messages.listing', model: @students.model_name.human(count: 2)) %>
+        <%= t('messages.listing_my_alumnis', model: @students.model_name.human(count: 2)) %>
     </div>
 
-    <%= form_tag site_profile_students_path, :method => 'get', :class => 'search-form' do %>
+    <%= form_tag site_profile_students_by_member_path, :method => 'get', :class => ' search-form' do %>
       <p>
         <%= text_field_tag :search, nil, :placeholder => "#{t('labels.name_or_enem')}", :class => 'form-control search-text' %>
         <%= submit_tag "#{t('labels.search')}", :name => nil, :class => 'btn btn-default' %>
@@ -30,11 +29,6 @@
                         <td><%= student.name %></td>
                         <td><%= student.university %></td>
                         <td><%= student.course %></td>
-                        <td style="width: 150px; ">
-                            <%= link_to site_profile_students_add_to_member_path(student), class: "btn btn-success btn-circle submit_student", :method => :post, remote: true do %>
-                              <%= fa_icon("plus") %> <%=t('labels.my_alumni')%>
-                            <% end %>
-                        </td>
                     </tr>
                   <% end %>
               </tbody>
