@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <%= render partial: "layouts/site_shared/navigation" %>
+    <%= render partial: "layouts/profile_shared/navigation" %>
     <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
@@ -48,7 +48,7 @@
                 </li>
                 <li class="sidebar-brand">
                     <%= link_to site_profile_students_by_member_path do %>
-                    <%= fa_icon('dashboard fw') %>
+                    <%= fa_icon('users fw') %>
                     <%= t('backoffice_menu.my_students') %>
                     <% end %>
                 </li>
@@ -57,12 +57,10 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                            <%= yield %>
-                    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                        <%= yield %>
                 </div>
             </div>
         </div>

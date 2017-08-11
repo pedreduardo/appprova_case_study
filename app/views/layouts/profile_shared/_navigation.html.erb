@@ -1,0 +1,37 @@
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container dashboard-header">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <%= image_tag("logo.png", class: 'logo-nav-dashboard') %>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <% unless member_signed_in? %>
+                <li>
+                    <%= link_to "Login", new_member_session_path, class: 'nav-login' %>
+                </li>
+                <li>
+                    <button class="btn btn-app btn-lg"><%= link_to "Cadastrar-se", new_member_registration_path %></button>
+                </li>
+                <% else %>
+                <li>
+                    <%= link_to current_member.email, "#", class: 'nav-login' %>
+                </li>
+                <li>
+                    <%= link_to "Painel", site_profile_dashboard_index_path, class: 'nav-login' %>
+                </li>
+                <li>
+                    <button class="btn btn-app btn-md btn-logout"><%= link_to "Sair", destroy_member_session_path,  method: :delete %></button>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>

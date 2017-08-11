@@ -28,7 +28,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #222;
+  background: #2C3E50;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -36,7 +36,8 @@ body {
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px;
+  border-top: 5px solid #e84154;
+  width: 220px;
 }
 
 #page-content-wrapper {
@@ -82,9 +83,8 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand {
-  height: 65px;
   font-size: 18px;
-  line-height: 60px;
+  line-height: 80px;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -95,21 +95,19 @@ body {
   color: #fff;
   background: none;
 }
-@media(min-width:768px) {
+@media(max-width:768px) {
   #wrapper {
     padding-left: 0;
   }
 
   #wrapper.toggled {
     padding-left: 250px;
+    border-top: 7px solid #e84154;
+    width: 220px;
   }
 
   #sidebar-wrapper {
     width: 0;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
   }
 
   #page-content-wrapper {
@@ -131,4 +129,54 @@ body {
   max-width: 250px;
   display: inline;
   margin-right: 10px;
+}
+
+.logo-nav-dashboard {
+  margin: 10px 8px;
+  max-width: 170px;
+}
+
+.dashboard-header {
+  width: 100%;
+}
+
+.btn-logout {
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
+.sidebar-brand {
+  height: 55px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand a {
+  vertical-align: middle;
+  height: 55px;
+  color: #e5e5e5;
+  padding: 16px 0px 12px 30px !important;
+}
+
+.sidebar-brand a:hover {
+  color: #2C3E50;
+}
+
+.page-header {
+  color: #2C3E50;
+}
+
+.btn-app, .btn-app a, .btn-app:hover {
+    background: #e84154;
+    color: white;
+    text-decoration: none;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+      /* z-index: 3; */
+  background-color: #2C3E50;
+  border-color: #2C3E50;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: #2C3E50;
 }

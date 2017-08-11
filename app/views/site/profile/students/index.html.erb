@@ -1,15 +1,15 @@
 <div id="flash"></div>
-<h1 class="page-header"><%= @students.model_name.human(count: 2) %></h1>
+<h1 class="page-header"><%= t('labels.my_alumnis') %></h1>
 <div class="panel panel-default">
     <div class="panel-heading">
 
-        <%= t('messages.listing', model: @students.model_name.human(count: 2)) %>
+        <%= t('messages.listing_my_alumnis', model: @students.model_name.human(count: 2)) %>
     </div>
 
     <%= form_tag site_profile_students_path, :method => 'get', :class => 'search-form' do %>
       <p>
         <%= text_field_tag :search, nil, :placeholder => "#{t('labels.name_or_enem')}", :class => 'form-control search-text' %>
-        <%= submit_tag "#{t('labels.search')}", :name => nil, :class => 'btn btn-default' %>
+        <%= submit_tag "#{t('labels.search')}", :name => nil, :class => 'btn btn-app' %>
       </p>
     <% end %>
 
@@ -19,9 +19,10 @@
           <table class="table table-striped table-bordered table-hover">
               <thead>
                   <tr>
-                      <th><%= @students.model.human_attribute_name('name') %></th>
-                      <th><%= @students.model.human_attribute_name('university') %></th>
-                      <th><%= @students.model.human_attribute_name('curso') %></th>
+                    <th><%= @students.model.human_attribute_name('name') %></th>
+                    <th><%= @students.model.human_attribute_name('university') %></th>
+                    <th><%= @students.model.human_attribute_name('curso') %></th>
+                    <th><%= t('labels.action') %></th>
                   </tr>
               </thead>
               <tbody>
