@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
     namespace :profile do
       resources :dashboard, only: [:index]
-      resources :students, only: [:index]
-      resources :my_students, only: [:index]
+      resources :students, only: %i[index]
+      get 'students_by_member', to: 'students#students_by_member'
       post 'students/add_to_member', to: 'students#add_to_member'
     end
   end
