@@ -1,1 +1,53 @@
-Dashboard
+<div class="row">
+  <div class="col-md-6 chart-box">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-long-arrow-right fa-fw"></i>
+          Tipos</h3>
+      </div>
+      <div class="panel-body">
+        <%= pie_chart ({"Públicas" => @students.where(public_university: true).count, "Privadas" => @students.where(public_university: false).count }), donut: true , colors: ["#ff3f55", "#666"] , legend: "bottom" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 chart-box">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-long-arrow-right fa-fw"></i>
+          Cursos mais populares</h3>
+      </div>
+      <div class="panel-body">
+        <%= pie_chart @students.group(:course).order('count_id desc').count('id').take(10) , legend: "bottom" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 chart-box">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-long-arrow-right fa-fw"></i>
+          Faculdades mais populares</h3>
+      </div>
+      <div class="panel-body">
+        <%= bar_chart @students.group(:university).order('count_id desc').count('id').take(10) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 chart-box">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-long-arrow-right fa-fw"></i>
+          Média de estudantes provados</h3>
+      </div>
+      <div class="panel-body">
+        <%= column_chart ({"Minha escola" => @students.count, "Outras escolas" => @average_of_students }) %>
+      </div>
+    </div>
+  </div>
+</div>
