@@ -1,6 +1,6 @@
 class Site::Profile::DashboardController < Site::ProfileController
   def index
-    @students = current_member.students.limit(500)
+    @students = current_member.students
     members = Member.average_students
     amount = 0
     members.each do |member|
