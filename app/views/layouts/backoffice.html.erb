@@ -22,22 +22,42 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <%= render partial: "layouts/backoffice_shared/navigation" %>
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <%= yield %>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
+    <%= render partial: "layouts/backoffice_shared/navigation" %>
+    <div id="wrapper" class="toggled">
+        <div id="sidebar-wrapper">
+            <ul class="nav" id="side-menu">
+            <li class="sidebar-brand">
+                <%= link_to backoffice_path do %>
+                <%= fa_icon('dashboard fw') %>
+                <%= t('backoffice_menu.dashboard') %>
+                <% end %>
+            </li>
+            <li class="sidebar-brand">
+                <%= link_to backoffice_members_path do %>
+                <%= fa_icon('book fw') %>
+                <%= t('backoffice_menu.members') %>
+                <% end %>
+            </li>
+            <li class="sidebar-brand">
+                <%= link_to backoffice_students_path do %>
+                <%= fa_icon('check-circle fw') %>
+                <%= t('backoffice_menu.students') %>
+                <% end %>
+            </li>
+        </ul>
         </div>
-        <!-- /#page-wrapper -->
+
+    <!-- Page Content -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <%= yield %>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
     </div>
     <!-- /#wrapper -->
 </body>

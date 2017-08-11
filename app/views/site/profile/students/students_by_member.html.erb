@@ -8,7 +8,7 @@
     <%= form_tag site_profile_students_by_member_path, :method => 'get', :class => ' search-form' do %>
       <p>
         <%= text_field_tag :search, nil, :placeholder => "#{t('labels.name_or_enem')}", :class => 'form-control search-text' %>
-        <%= submit_tag "#{t('labels.search')}", :name => nil, :class => 'btn btn-default' %>
+        <%= submit_tag "#{t('labels.search')}", :name => nil, :class => 'btn btn-app' %>
       </p>
     <% end %>
 
